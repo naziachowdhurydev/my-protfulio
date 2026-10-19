@@ -47,6 +47,12 @@ export default function ResumePage() {
             <a href="https://www.google.com/maps/search/?api=1&query=Court%20Road%2C%20Moulvibazar" target="_blank" rel="noreferrer">
               Court Road, Moulvibazar
             </a>
+            <span className="resume-contact-divider" />
+            <a href="https://github.com/naziachowdhurydev" target="_blank" rel="noreferrer">GitHub</a>
+            <span className="resume-contact-divider" />
+            <a href="https://www.instagram.com/_nazia_chy_/" target="_blank" rel="noreferrer">Instagram</a>
+            <span className="resume-contact-divider" />
+            <a href="https://www.linkedin.com/in/nazia-chowdhury-448772441/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </header>
 

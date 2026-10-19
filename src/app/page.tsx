@@ -345,10 +345,13 @@ export default function Home() {
         <div className="page-width contact-inner">
           <p className="eyebrow"><span className="status-dot" /> Have a project in mind?</p>
           <h2>Let&apos;s make<br /><span>something meaningful.</span></h2>
-          <p>Interested in working together? Get in touch by phone or email.</p>
+          <p>Interested in working together? Get in touch by email or connect with me online.</p>
           <div className="contact-details">
             <a href="mailto:naziachywork@gmail.com">naziachywork@gmail.com</a>
             <a href="https://www.google.com/maps/search/?api=1&query=Court%20Road%2C%20Moulvibazar" target="_blank" rel="noreferrer">Court Road, Moulvibazar ↗</a>
+            <a href="https://github.com/naziachowdhurydev" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="https://www.instagram.com/_nazia_chy_/" target="_blank" rel="noreferrer">Instagram ↗</a>
+            <a href="https://www.linkedin.com/in/nazia-chowdhury-448772441/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
           </div>
           <a className="button button-light contact-resume" href="/resume">View resume <span aria-hidden="true">↗</span></a>
         </div>
