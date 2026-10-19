@@ -1,6 +1,29 @@
 import Link from "next/link";
 import PrintButton from "./print-button";
 
+const skills = [
+  {
+    label: "Web development",
+    items: "HTML5, CSS3, JavaScript, TypeScript, React.js, Next.js, Tailwind CSS, responsive web design, dynamic routing, React Context API",
+  },
+  {
+    label: "Backend & database",
+    items: "REST API integration, Next.js API routes, MongoDB, authentication, Better Auth, CRUD operations, JSON",
+  },
+  {
+    label: "Tools",
+    items: "Git, GitHub, Vercel, Netlify, VS Code, npm, React Toastify, Lucide Icons",
+  },
+  {
+    label: "Professional skills",
+    items: "CMS management, data entry, client support, communication, problem solving, attention to detail, time management, teamwork, willingness to learn",
+  },
+  {
+    label: "Languages",
+    items: "Bangla, English",
+  },
+];
+
 export default function ResumePage() {
   return (
     <main className="resume-main">
@@ -9,107 +32,100 @@ export default function ResumePage() {
         <PrintButton />
       </div>
       <article className="resume-sheet">
-        <header>
-          <h1 className="resume-name">Nazia Chowdhury</h1>
-          <p className="resume-role">Virtual Assistant</p>
+        <header className="resume-header">
+          <div className="resume-header-top">
+            <div>
+              <p className="resume-kicker">Curriculum vitae</p>
+              <h1 className="resume-name">Nazia Chowdhury</h1>
+              <p className="resume-role">Frontend Developer <span>|</span> Virtual Assistant</p>
+            </div>
+            <span className="resume-monogram" aria-hidden="true">NC</span>
+          </div>
           <div className="resume-contact">
             <a href="mailto:naziachywork@gmail.com">naziachywork@gmail.com</a>
-            <br />
+            <span className="resume-contact-divider" />
             <a href="https://www.google.com/maps/search/?api=1&query=Court%20Road%2C%20Moulvibazar" target="_blank" rel="noreferrer">
               Court Road, Moulvibazar
             </a>
           </div>
         </header>
-        <section className="resume-section">
+
+        <section className="resume-section resume-objective">
           <h2>Objective</h2>
           <p>
-            Motivated and hardworking individual looking for an opportunity to
-            grow professionally, use my skills in web development, data entry,
-            and customer support, and contribute positively to a professional
-            team. I am eager to learn new skills, take on new challenges, and
-            build my experience while delivering reliable and quality work.
+            I’m a motivated and curious person who enjoys learning new things
+            and improving through hands-on experience. I have experience working
+            as a Virtual Assistant, where I’ve developed skills in CMS
+            management, data entry, client support, and organized day-to-day
+            work.
+          </p>
+          <p>
+            Alongside my professional experience, I have been building my skills
+            in web development and working on personal projects using React,
+            Next.js, TypeScript, and modern web technologies. I enjoy solving
+            problems, paying attention to small details, and learning from
+            things that don’t work the first time.
+          </p>
+          <p>
+            I’m looking for an opportunity where I can contribute my existing
+            skills, continue learning, and grow with a supportive and
+            professional team.
           </p>
         </section>
-        <section className="resume-section">
-          <h2>Work Experience</h2>
-          <div className="resume-entry">
-            <div className="resume-entry-header">
-              <h3>Web Designer &amp; Developer · Independent Projects</h3>
-              <span>Project-based</span>
-            </div>
-            <ul className="resume-list">
-              <li>Designed and built responsive, user-friendly web applications.</li>
-              <li>Developed interfaces and features using React, Next.js, and TypeScript.</li>
-              <li>Created and deployed projects including <a href="https://bazar-dor-beta-ten.vercel.app/" target="_blank" rel="noreferrer">Bazar Dor</a>, <a href="https://explore-technologies.netlify.app/" target="_blank" rel="noreferrer">Explore Technologies</a>, and <a href="https://b14-a6-fit-log-virid.vercel.app/" target="_blank" rel="noreferrer">FitLog</a>.</li>
-            </ul>
-          </div>
-          <div className="resume-entry">
-            <div className="resume-entry-header">
-              <h3>Personal Projects &amp; Learning</h3>
-              <span>Ongoing</span>
-            </div>
-            <ul className="resume-list resume-list-stacked">
-              <li>Building full-stack applications with Next.js.</li>
-              <li>Working with MongoDB and authentication.</li>
-              <li>Practicing TypeScript and modern frontend development.</li>
-              <li>Learning new tools and improving through real projects.</li>
-            </ul>
-          </div>
-          <div className="resume-entry">
-            <div className="resume-entry-header">
-              <h3>Virtual Assistant · IntWins</h3>
-              <span>2022 — Present</span>
-            </div>
-            <ul className="resume-list">
-              <li>Managing CMS</li>
-              <li>Client support</li>
-              <li>Data entry</li>
-            </ul>
-          </div>
-        </section>
+
         <section className="resume-section">
           <h2>Education</h2>
-          <div className="resume-entry">
-            <div className="resume-entry-header">
-              <h3>Undergraduate · National University of Bangladesh</h3>
+          <div className="resume-education-grid">
+            <div className="resume-education-entry">
+              <h3>Undergraduate</h3>
+              <p>National University of Bangladesh</p>
+              <span>Major: English Literature · Currently pursuing</span>
             </div>
-            <p>Major: English Literature</p>
-          </div>
-          <div className="resume-entry">
-            <div className="resume-entry-header">
-              <h3>Higher Secondary Certificate · Humanities</h3>
-              <span>2022</span>
+            <div className="resume-education-entry">
+              <h3>Higher Secondary Certificate</h3>
+              <p>Humanities · 2022</p>
+              <span>GPA: 5.00</span>
             </div>
-            <p>GPA: 5.0</p>
-          </div>
-          <div className="resume-entry">
-            <div className="resume-entry-header">
-              <h3>Secondary School Certificate · Science</h3>
-              <span>2020</span>
+            <div className="resume-education-entry">
+              <h3>Secondary School Certificate</h3>
+              <p>Science · 2020</p>
+              <span>GPA: 3.98</span>
             </div>
-            <p>GPA: 3.98</p>
           </div>
         </section>
+
         <section className="resume-section">
           <h2>Skills &amp; Capabilities</h2>
-          <p><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), TypeScript, React.js, Next.js, Tailwind CSS, responsive web design, component-based development, dynamic routing, React Context API.</p>
-          <p><strong>Backend &amp; database:</strong> REST API integration, Next.js API routes, MongoDB, authentication and authorization, Better Auth, CRUD operations, server-side and client-side rendering.</p>
-          <p><strong>Tools &amp; workflow:</strong> Git, GitHub, Vercel, Netlify, VS Code, npm, JSON, React Toastify, Lucide Icons.</p>
-          <p><strong>Office &amp; languages:</strong> Microsoft Word, Excel, PowerPoint; Bangla and English.</p>
-        </section>
-        <section className="resume-section">
-          <h2>Activities</h2>
-          <div className="resume-entry">
-            <div className="resume-entry-header">
-              <h3>English Literature · Member</h3>
-              <span>2025</span>
-            </div>
-            <p>Network with alumni.</p>
+          <div className="resume-skills-grid">
+            {skills.map((skill) => (
+              <div className="resume-skill-group" key={skill.label}>
+                <h3>{skill.label}</h3>
+                <p>{skill.items}</p>
+              </div>
+            ))}
           </div>
         </section>
-        <section className="resume-section">
-          <h2>Interests</h2>
-          <p>Soccer</p>
+
+        <section className="resume-section resume-lower-grid">
+          <div>
+            <h2>Activities</h2>
+            <div className="resume-entry">
+              <h3>English Literature · Member</h3>
+              <p>
+                2025 · Participated in academic and networking activities and
+                connected with alumni and other students.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h2>Interests</h2>
+            <div className="resume-interest-tags">
+              <span>Web development</span>
+              <span>Learning new technologies</span>
+              <span>Creative problem-solving</span>
+              <span>Soccer</span>
+            </div>
+          </div>
         </section>
       </article>
     </main>
