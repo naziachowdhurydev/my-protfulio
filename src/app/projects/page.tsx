@@ -42,16 +42,20 @@ export default function ProjectsPage() {
       <section className="projects-page-list page-width" aria-label="All projects">
         {projects.map((project) => (
           <article className={`project-list-card project-list-${project.tone}`} key={project.href}>
-            <Link
-              className={`project-list-art project-${project.tone}`}
-              href={project.href}
-              target="_blank"
-              aria-label={`Open ${project.title} live project`}
-            >
+            <div className={`project-list-art project-${project.tone} project-live-preview`}>
               <span className="project-card-number">{project.number}<i> / {String(projects.length).padStart(2, "0")}</i></span>
               <span className="project-card-graphic" aria-hidden="true"><span>{project.number}</span></span>
-              <span className="project-preview-cta">View live project <span aria-hidden="true">↗</span></span>
-            </Link>
+              <iframe
+                src={project.href}
+                title={`${project.title} live website preview`}
+                loading="lazy"
+                tabIndex={-1}
+                sandbox="allow-scripts allow-same-origin"
+              />
+              <Link className="project-preview-cta" href={project.href} target="_blank">
+                View live project <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
             <div className="project-list-content">
               <div className="project-labels">
                 <span className="project-category">{project.category}</span>

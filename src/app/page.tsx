@@ -117,8 +117,8 @@ export default function Home() {
             <span>Nazia.</span>
           </h1>
           <p className="hero-description">
-            A responsible and friendly virtual assistant with strong
-            communication, customer-handling, and computer skills.
+            I&apos;m a curious web developer and virtual assistant, building
+            thoughtful digital experiences with React, Next.js, and TypeScript.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">
@@ -215,7 +215,8 @@ export default function Home() {
               ))}
               <p className="project-rail-note">Explore the full collection or add another project anytime.</p>
               <Link className="project-all-link" href="/projects">
-                Explore all projects <span aria-hidden="true">↗</span>
+                <span className="project-all-copy">Explore more projects</span>
+                <span className="project-all-arrow" aria-hidden="true">↗</span>
               </Link>
             </aside>
           </div>
@@ -227,6 +228,10 @@ export default function Home() {
           <div>
             <p className="eyebrow">A little about me</p>
             <h2>Curious by nature.<br /><span>Always learning,<br />always growing.</span></h2>
+            <p className="about-side-note">
+              <span aria-hidden="true" />
+              Building ideas into real projects.
+            </p>
           </div>
           <div className="about-copy">
             <p>
