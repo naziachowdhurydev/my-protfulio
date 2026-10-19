@@ -1,29 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const projects = [
-  {
-    number: "01",
-    title: "Bazar Dor",
-    type: "Market price tracker",
-    tone: "mint",
-    href: "https://bazar-dor-beta-ten.vercel.app/",
-  },
-  {
-    number: "02",
-    title: "Explore Technologies",
-    type: "Technology discovery",
-    tone: "peach",
-    href: "https://explore-technologies.netlify.app/",
-  },
-  {
-    number: "03",
-    title: "FitLog",
-    type: "Workout library",
-    tone: "blue",
-    href: "https://b14-a6-fit-log-virid.vercel.app/",
-  },
-];
+import type { CSSProperties } from "react";
+import { projects } from "@/lib/projects";
 
 const experience = [
   {
@@ -190,28 +168,56 @@ export default function Home() {
               and fitness.
             </p>
           </div>
-          <div className="project-grid">
-            {projects.map((project) => (
-              <a
-                className="project-card"
-                href={project.href}
-                key={project.number}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`Open ${project.title} project in a new tab`}
-              >
-                <div className={`project-art project-${project.tone}`}>
-                  <span className="project-number">{project.number} / SELECTED WORK</span>
-                  <span className="project-art-title">{project.title}</span>
-                  <span className="project-arrow" aria-hidden="true">↗</span>
-                  <span className="project-decoration" />
-                </div>
-                <div className="project-meta">
-                  <div><h3>{project.title}</h3><p>{project.type}</p></div>
-                  <span className="text-arrow" aria-hidden="true">↗</span>
-                </div>
-              </a>
-            ))}
+          <div className="projects-layout">
+            <div className="project-grid">
+              {projects.slice(0, 3).map((project, index) => (
+                <article
+                  className={`project-card project-card-${project.tone}`}
+                  key={project.number}
+                  style={{ "--project-index": index } as CSSProperties}
+                >
+                  <div className="project-copy">
+                    <div className="project-labels">
+                      <span className="project-category">{project.category}</span>
+                      <span className="project-year">↗ Live</span>
+                    </div>
+                    <p className="project-count">{project.number} / {String(projects.length).padStart(2, "0")}</p>
+                    <h3>{project.title}</h3>
+                    <p className="project-description">{project.description}</p>
+                    <p className="project-type">{project.type}</p>
+                    <a className="project-live-link" href={project.href} target="_blank" rel="noreferrer">
+                      View live project <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                  <a
+                    className={`project-art project-${project.tone}`}
+                    href={project.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${project.title} live project in a new tab`}
+                  >
+                    <span className="project-browser-bar"><i /><i /><i /><span>{project.title}</span></span>
+                    <span className="project-art-title">{project.title}</span>
+                    <span className="project-decoration" />
+                    <span className="project-preview-cta">Open project ↗</span>
+                  </a>
+                </article>
+              ))}
+            </div>
+            <aside className="project-link-rail" aria-label="Live project links">
+              <p className="eyebrow">Live links</p>
+              {projects.slice(0, 3).map((project) => (
+                <a href={project.href} key={project.number} target="_blank" rel="noreferrer">
+                  <span>{project.number}</span>
+                  <strong>{project.title}</strong>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              ))}
+              <p className="project-rail-note">Explore the full collection or add another project anytime.</p>
+              <Link className="project-all-link" href="/projects">
+                Explore all projects <span aria-hidden="true">↗</span>
+              </Link>
+            </aside>
           </div>
         </div>
       </section>
