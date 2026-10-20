@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import { ProjectSourceLink } from "@/components/project-source-link";
 
 export const metadata: Metadata = {
   title: "Projects — Nazia Chowdhury",
@@ -41,7 +42,7 @@ export default function ProjectsPage() {
 
       <section className="projects-page-list page-width" aria-label="All projects">
         {projects.map((project) => (
-          <article className={`project-list-card project-list-${project.tone}`} key={project.href}>
+          <article className={`project-list-card project-list-${project.tone}`} key={project.slug}>
             <div className={`project-list-art project-${project.tone} project-live-preview`}>
               <span className="project-card-number">{project.number}<i> / {String(projects.length).padStart(2, "0")}</i></span>
               <span className="project-card-graphic" aria-hidden="true"><span>{project.number}</span></span>
@@ -61,13 +62,16 @@ export default function ProjectsPage() {
                 <span className="project-category">{project.category}</span>
                 <span className="project-year"><i /> Live</span>
               </div>
-              <h2>{project.title}</h2>
+              <h2><Link href={`/projects/${project.slug}`}>{project.title}</Link></h2>
               <p className="project-description">{project.description}</p>
               <div className="project-card-footer">
                 <span>{project.type}</span>
-                <Link className="project-card-link" href={project.href} target="_blank">
-                  Visit site <span aria-hidden="true">↗</span>
-                </Link>
+                <div className="project-card-actions">
+                  <Link className="project-card-link" href={project.href} target="_blank" rel="noreferrer">
+                    Visit site <span aria-hidden="true">↗</span>
+                  </Link>
+                  <ProjectSourceLink href={project.repositoryHref} />
+                </div>
               </div>
             </div>
           </article>

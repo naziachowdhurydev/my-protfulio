@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { projects } from "@/lib/projects";
+import { ProjectSourceLink } from "@/components/project-source-link";
 
 const experience = [
   {
@@ -170,10 +171,10 @@ export default function Home() {
           </div>
           <div className="projects-layout">
             <div className="project-grid">
-              {projects.slice(0, 3).map((project, index) => (
+              {projects.map((project, index) => (
                 <article
                   className={`project-card project-card-${project.tone}`}
-                  key={project.number}
+                  key={project.slug}
                   style={{ "--project-index": index } as CSSProperties}
                 >
                   <div className="project-copy">
@@ -182,19 +183,20 @@ export default function Home() {
                       <span className="project-year">↗ Live</span>
                     </div>
                     <p className="project-count">{project.number} / {String(projects.length).padStart(2, "0")}</p>
-                    <h3>{project.title}</h3>
+                    <h3><Link href={`/projects/${project.slug}`}>{project.title}</Link></h3>
                     <p className="project-description">{project.description}</p>
                     <p className="project-type">{project.type}</p>
-                    <a className="project-live-link" href={project.href} target="_blank" rel="noreferrer">
-                      View live project <span aria-hidden="true">↗</span>
-                    </a>
+                    <div className="project-actions">
+                      <a className="project-live-link" href={project.href} target="_blank" rel="noreferrer">
+                        View live project <span aria-hidden="true">↗</span>
+                      </a>
+                      <ProjectSourceLink href={project.repositoryHref} />
+                    </div>
                   </div>
                   <a
                     className={`project-art project-${project.tone}`}
-                    href={project.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Open ${project.title} live project in a new tab`}
+                    href={`/projects/${project.slug}`}
+                    aria-label={`View details for ${project.title}`}
                   >
                     <span className="project-browser-bar"><i /><i /><i /><span>{project.title}</span></span>
                     <span className="project-art-title">{project.title}</span>
@@ -206,8 +208,8 @@ export default function Home() {
             </div>
             <aside className="project-link-rail" aria-label="Live project links">
               <p className="eyebrow">Live links</p>
-              {projects.slice(0, 3).map((project) => (
-                <a href={project.href} key={project.number} target="_blank" rel="noreferrer">
+              {projects.map((project) => (
+                <a href={project.href} key={project.slug} target="_blank" rel="noreferrer">
                   <span>{project.number}</span>
                   <strong>{project.title}</strong>
                   <span aria-hidden="true">↗</span>

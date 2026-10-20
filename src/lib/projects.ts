@@ -1,4 +1,5 @@
 export type Project = {
+  slug: string;
   number: string;
   title: string;
   type: string;
@@ -6,10 +7,12 @@ export type Project = {
   category: string;
   tone: "mint" | "peach" | "blue";
   href: string;
+  repositoryHref: string | null;
 };
 
 export const projects: Project[] = [
   {
+    slug: "bazar-dor",
     number: "01",
     title: "Bazar Dor",
     type: "Market price tracker",
@@ -17,8 +20,10 @@ export const projects: Project[] = [
     category: "Price tracking",
     tone: "mint",
     href: "https://bazar-dor-beta-ten.vercel.app/",
+    repositoryHref: "https://github.com/naziachowdhurydev/Bazarador-web",
   },
   {
+    slug: "explore-technologies",
     number: "02",
     title: "Explore Technologies",
     type: "Technology discovery",
@@ -26,8 +31,10 @@ export const projects: Project[] = [
     category: "Developer tools",
     tone: "peach",
     href: "https://explore-technologies.netlify.app/",
+    repositoryHref: "https://github.com/naziachowdhurydev/Explore-Technologyyy",
   },
   {
+    slug: "fitlog",
     number: "03",
     title: "FitLog",
     type: "Workout library",
@@ -35,5 +42,6 @@ export const projects: Project[] = [
     category: "Fitness",
     tone: "blue",
     href: "https://b14-a6-fit-log-virid.vercel.app/",
+    repositoryHref: "https://github.com/naziachowdhurydev/B14-A6-Fit-Log",
   },
 ];

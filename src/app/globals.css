@@ -156,8 +156,12 @@ a:focus-visible, button:focus-visible { outline: 3px solid #8ebd43; outline-offs
 .project-copy h3 { margin: 0; font-size: clamp(25px, 3vw, 38px); font-weight: 590; letter-spacing: -.065em; line-height: 1.06; }
 .project-description { max-width: 400px; margin: 14px 0 0; color: #69776e; font-size: 12px; line-height: 1.75; }
 .project-type { margin: 10px 0 16px; color: #829084; font-size: 10px; }
-.project-live-link { display: inline-flex; align-items: center; gap: 18px; margin-top: auto; padding: 12px 15px; border-radius: 5px; background: var(--foreground); color: white; font-size: 10px; font-weight: 600; transition: gap .2s ease, background .2s ease, transform .2s ease; }
-.project-live-link:hover { gap: 24px; transform: translateY(-2px); background: #304a3c; }
+.project-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: auto; }
+.project-live-link { display: inline-flex; min-height: 34px; align-items: center; gap: 10px; padding: 0 12px; border-radius: 5px; background: var(--foreground); color: white; font-size: 9px; font-weight: 600; transition: gap .2s ease, background .2s ease, transform .2s ease; }
+.project-live-link:hover { gap: 13px; transform: translateY(-2px); background: #304a3c; }
+.project-source-link { display: inline-flex; min-height: 34px; flex: 0 0 auto; align-items: center; justify-content: center; gap: 6px; padding: 0 10px; border: 1px solid #d5e0d1; border-radius: 7px; background: #edf2e9; color: #345342; font-size: 9px; font-weight: 550; white-space: nowrap; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+.project-source-link:hover { transform: translateY(-2px); border-color: #bdcfb7; background: #e2ebdd; }
+.project-source-link svg { width: 14px; height: 14px; flex: 0 0 14px; }
 .project-art { height: auto; min-height: 290px; position: relative; display: flex; flex-direction: column; justify-content: center; overflow: hidden; padding: 30px; border: 1px solid #ffffffaa; border-radius: 12px; transition: transform .35s ease; }
 .project-card:hover .project-art { transform: scale(1.015); }
 .project-browser-bar { position: absolute; z-index: 2; top: 12px; right: 12px; left: 12px; display: flex; align-items: center; gap: 5px; height: 25px; padding: 0 9px; border: 1px solid #18312512; border-radius: 6px; background: #ffffffb8; color: #57675b; font-size: 8px; }
@@ -203,6 +207,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #8ebd43; outline-offs
 .projects-page-stats strong { margin-right: 7px; color: var(--foreground); font-size: 12px; }
 .projects-page-stats i { margin-left: 7px; color: #8ca981; font-size: 13px; font-style: normal; }
 .projects-page-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 20px; }
+.project-detail-card { grid-column: 1 / -1; width: min(760px, 100%); justify-self: center; }
 .project-list-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid #d7e0d5; border-radius: 14px; background: #fbfcf8; box-shadow: 0 12px 32px #1b30240b; transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
 .project-list-card:hover { transform: translateY(-5px); border-color: #a9bc9f; box-shadow: 0 24px 48px #1b30241a; }
 .project-list-art { height: clamp(230px, 24vw, 290px); min-height: 230px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 25px; }
@@ -228,6 +233,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #8ebd43; outline-offs
 .project-list-content h2 { margin: 17px 0 0; font-size: clamp(22px, 2.4vw, 29px); font-weight: 590; letter-spacing: -.055em; line-height: 1.08; }
 .project-list-content .project-description { min-height: 48px; margin: 9px 0 0; color: #69776e; font-size: 11px; line-height: 1.7; }
 .project-card-footer { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; margin-top: 17px; padding-top: 13px; border-top: 1px solid #e4e9e2; }
+.project-card-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px; }
 .project-card-footer > span { color: #849086; font-size: 9px; }
 .project-card-link { display: inline-flex; align-items: center; gap: 12px; color: #345342; font-size: 10px; font-weight: 650; transition: gap .2s ease, color .2s ease; }
 .project-card-link:hover { gap: 17px; color: #72945f; }
